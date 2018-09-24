@@ -1,0 +1,14 @@
+<div class="list">
+	<div class="add">
+		<a href="" ng-click="agregarActividad('Nueva Actividad')">+ Agregar Actividad</a>
+	</div>
+	<div ng-repeat="actividad in actividades" class="item">
+		<input type="checkbox">
+		<label ng-hide="editar" ng-click="editar = true">{{ actividad.nombre }}</label>
+		<input ng-blur="editar = false" ng-model="actividad.nombre" ng-show="editar" type="text" class="editing-label">
+		<div class="actions">
+			<!--<a href="" ng-click="editar = false">Guardar</a>-->
+			<a href="" class="delete" ng-click="eliminarActividad(actividad,$index)">Eliminar</a>
+		</div>
+	</div>
+</div>
